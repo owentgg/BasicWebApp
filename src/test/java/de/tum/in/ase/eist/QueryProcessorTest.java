@@ -33,7 +33,7 @@ class QueryProcessorTest {
 	@Test
 	void testKnowsAboutName(){
 		String actual = queryProcessor.process("name");
-		if(!actual.contains("sheesh1")) {
+		if(!actual.contains("sheesh")) {
 			fail("irgendwas läuft da falsch");
 		}
 	}
