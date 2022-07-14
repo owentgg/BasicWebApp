@@ -2,6 +2,8 @@ package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
 
+import static java.lang.Integer.parseInt;
+
 @Service
 public class QueryProcessor {
 
@@ -13,8 +15,19 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.toLowerCase().contains("name")) {
            return "sheesh";
-        } else { // TODO extend the programm here
-            return "";
+        } else if(query.toLowerCase().contains("larger")){ // TODO extend the programm here
+            String[] allNumbers = query.substring(':').split(",");
+            int i = parseInt(allNumbers[0]);
+            for(String s: allNumbers){
+                if(parseInt(s) > i){
+                    i = parseInt(s);
+                }
+            }
+            return String.valueOf(i);
         }
+        else if(query.toLowerCase().contains("plus")){
+
+        }
+        return "";
     }
 }
