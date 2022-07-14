@@ -26,7 +26,14 @@ public class QueryProcessor {
             return String.valueOf(i);
         }
         else if(query.toLowerCase().contains("plus")){
-
+            String[] allNumbers = query.substring(':').split(",");
+            int i = parseInt(allNumbers[0]);
+            for(String s: allNumbers){
+                if(parseInt(s) > i){
+                    i = parseInt(s) + i;
+                }
+            }
+            return String.valueOf(i);
         }
         return "";
     }
