@@ -16,7 +16,7 @@ public class QueryProcessor {
         } else if (query.toLowerCase().contains("name")) {
            return "sheesh";
         } else if(query.toLowerCase().contains("larger")){ // TODO extend the programm here
-            String[] allNumbers = query.substring(query.indexOf(':')).split(",");
+            String[] allNumbers = query.substring(query.indexOf("largest:")).split(",");
             int i = parseInt(allNumbers[0]);
             for(String s: allNumbers){
                 if(parseInt(s) > i){
